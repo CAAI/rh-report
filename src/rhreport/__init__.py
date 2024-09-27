@@ -1,1 +1,1 @@
-from .rhreport import rhreport
+from .rhreport import RHReport
