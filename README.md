@@ -1,6 +1,6 @@
-# RH Report
+# RH-Reports
 
-RH-Report is a lightweight tool for generating one-page PDF reports.
+RH-Reports is a lightweight tool for generating one-page PDF reports.
 
 The report includes multiple modules:
 - Text
@@ -12,7 +12,7 @@ To install this library
 > `pip install git+https://github.com/CAAI/rh-reports.git`
 
 ## Dependencies
-RH report uses:
+RH reports uses:
 | Tool | Aim |
 | --- | --- |
 | numpy | calculation |
