@@ -1,0 +1,74 @@
+# This workflow contains actions for
+# - installing Python dependencies
+# - running tests
+# - linting with flake8, pylint
+# - checking docstrings with pydocstyle
+# - check if sphinx documentation builds correctly
+# - type checking with mypy
+#
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
+
+name: Python package
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+# Replace packagename with your package name
+env:
+  PACKAGE_NAME: rhreport
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: [3.8, 3.9, "3.10"]
+
+#    When you want to test accross different OS replace lines 19-23 with the lines below
+#    runs-on: ${{ matrix.os }}-latest
+#    strategy:
+#      fail-fast: false
+#      matrix:
+#        os: [macos, ubuntu, windows]
+#        python-version: [3.8, 3.9, "3.10"]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        python -m pip install .
+
+#    Uncomment the actions below depending on the linters and tests you want to do
+#    - name: Lint with flake8
+#      run: |
+#        python -m pip install flake8
+#        flake8 $PACKAGE_NAME
+#    - name: Lint with pylint
+#      run: |
+#        python -m pip install pylint
+#        pylint $PACKAGE_NAME
+#    - name: Check docstrings with pydocstyle
+#      run: |
+#        python -m pip install pydocstyle
+#        pydocstyle $PACKAGE_NAME --convention=numpy --add-select=D417 --add-ignore="D102,D105"
+#    - name: Test with pytest
+#      run: |
+#        python -m pip install pytest
+#        pytest tests
+#    - name: Test with MyPy
+#      run: |
+#        python -m pip install mypy
+#        mypy $PACKAGE_NAME
+#    - name: Check if documentation builds.
+#      run: |
+#        python -m pip install sphinx sphinx-rtd-theme sphinxcontrib-napoleon sphinx-autodoc-typehints
+#        cd docs; make html SPHINXOPTS="-W --keep-going"
