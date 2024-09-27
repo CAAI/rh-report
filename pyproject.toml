@@ -3,8 +3,8 @@ requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "rhreports"
-version = '0.2'
+name = "rhreport"
+version = '0.2.1'
 description = "Report generation tool"
 authors = [{name = "U. Lindberg", email = "ulrich.lindberg@regionh.dk"}]
 readme = "README.md"
@@ -26,7 +26,7 @@ test = ["pytest", "mypy"]
 
 [tool.setuptools]
 package-dir = {"" = "src"}
-packages = ["rhreports"]
+packages = ["rhreport"]
 
 [tool.flake8]
 max-line-length = 99

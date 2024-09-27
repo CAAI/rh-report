@@ -1,6 +1,6 @@
-# RH-Reports
+# RH-Report
 
-RH-Reports is a lightweight tool for generating one-page PDF reports.
+RH-Report is a lightweight tool for generating one-page PDF reports.
 
 The report includes multiple modules:
 - Text
@@ -9,10 +9,10 @@ The report includes multiple modules:
 - Plots
 
 To install this library
-> `pip install git+https://github.com/CAAI/rh-reports.git`
+> `pip install git+https://github.com/CAAI/rh-report.git`
 
 ## Dependencies
-RH reports uses:
+RH report uses:
 | Tool | Aim |
 | --- | --- |
 | numpy | calculation |
@@ -22,10 +22,11 @@ RH reports uses:
 ```python
 import requests
 from io import BytesIO
-from rhreports import rhreports
+from datetime import date
+from rhreport import RHReport
 
 # Initialise report
-report = rhreports()
+report = RHReport()
 
 # Define useful metrics
 pagewidth = (1-report.margin[3]-report.margin[1])
@@ -70,5 +71,5 @@ report.set_footer(
 )
 
 # Store report to PDF file
-report.save('rhreports.pdf')
+report.save('rhreport.pdf')
 ```

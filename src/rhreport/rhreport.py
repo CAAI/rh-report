@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 
-class rhreports:
+class RHReport:
     def __init__(self):
         # Set A4 paper (8.27 x 11.69 inches)
         self.fig, self.ax = plt.subplots(figsize=(8.27,11.69), constrained_layout=True)
