@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "rhreport"
-version = '0.2.4'
+version = '0.2.5'
 description = "Report generation tool"
 authors = [{name = "U. Lindberg"}]
 readme = "README.md"
