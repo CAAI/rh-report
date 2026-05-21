@@ -4,9 +4,9 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "rhreport"
-version = '0.2.1'
+version = '0.2.2'
 description = "Report generation tool"
-authors = [{name = "U. Lindberg", email = "ulrich.lindberg@regionh.dk"}]
+authors = [{name = "U. Lindberg"}]
 readme = "README.md"
 requires-python = ">=3.8"
 license = {text = "MIT"}
