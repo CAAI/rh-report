@@ -180,7 +180,7 @@ class RHReport:
                 if ha == 'left':
                     self.ax.text(x + 0.015 + (i)*colwidth, y-0.06-(row*0.025), value, fontsize=8, ha=ha)
                 elif ha == 'right':
-                    self.ax.text(x + (i+1)*colwidth, y-0.06-(row*0.025), value, fontsize=8, ha=ha)
+                    self.ax.text(x - 0.015 + (i+1)*colwidth, y-0.06-(row*0.025), value, fontsize=8, ha=ha)
 
                 # Add Divider
                 xmin = x + 0.01 + (i)*colwidth
