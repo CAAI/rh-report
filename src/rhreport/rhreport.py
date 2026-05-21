@@ -127,7 +127,7 @@ class RHReport:
 
             i+=1
 
-    def create_table(self, pos: list, data: dict, rowheader: bool=True):
+    def create_table(self, pos: list, data: dict, ha: str='left', rowheader: bool=True):
         """ Create table 
         
         Parameters:
@@ -177,7 +177,7 @@ class RHReport:
                 i = col+rowheader
 
                 # Add text
-                self.ax.text(x + 0.015 + (i)*colwidth, y-0.06-(row*0.025), value, fontsize=8, ha='left')
+                self.ax.text(x + 0.015 + (i)*colwidth, y-0.06-(row*0.025), value, fontsize=8, ha=ha)
 
                 # Add Divider
                 xmin = x + 0.01 + (i)*colwidth
