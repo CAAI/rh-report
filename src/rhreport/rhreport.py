@@ -178,9 +178,9 @@ class RHReport:
 
                 # Add text
                 if ha == 'right':
-                    self.ax.text(x - 0.015 + colwidth, y-0.06-(row*0.025), value, fontsize=8, ha=ha)
+                    self.ax.text(x - 0.015 + (i+1)*colwidth, y-0.06-(row*0.025), value, fontsize=8, ha=ha)
                 elif ha == 'center':
-                    self.ax.text(x + colwidth/2, y-0.06-(row*0.025), value, fontsize=8, ha=ha)
+                    self.ax.text(x + (i)*colwidth + colwidth/2, y-0.06-(row*0.025), value, fontsize=8, ha=ha)
                 else:
                     # Left
                     self.ax.text(x + 0.015 + (i)*colwidth, y-0.06-(row*0.025), value, fontsize=8, ha=ha)
